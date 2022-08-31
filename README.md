@@ -9,7 +9,7 @@
 
 基于 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/)，修改部分样式和组件，设计实现了个人主页 [Ruopeng Gao's Homepage](https://ruopenggao.com) 的模板。
 
-![image-20220829001615848](img/rpg-homepage.png)
+![rpg-homepage](img/rpg-homepage.png)
 
 
 
@@ -21,7 +21,26 @@
 
 
 
+## 目录
+
+- [配置环境](#配置环境)
+- [相关指令](#相关指令)
+- **[构建你的主页 ‼](#构建你的主页)**
+- [部署在服务器](#部署在服务器)
+- [部署在GitHub](#部署在-GitHub)
+
+
+
 ## 配置环境
+
+作者使用的配置环境如下：
+- MacOS
+  - node.js: v18.4.0
+  - npm: v8.13.1
+
+- Windows
+  - node.js: v16.15.1
+  - npm: v8.12.2
 
 使用如下指令即可配置环境：
 ```shell
@@ -52,9 +71,18 @@ sh build.sh
 
 本仓库的代码在正确运行之后，可以生成一个样例网站如下所示：
 
-![image-20220829005000883](img/demo-homepage.png)
+![demo-homepage](img/demo-homepage.png)
 
-你可以很容易的在这个网站的代码中增加属于你自己的描述，从而快速构建一个属于你的个人主页。对于修改的方式，有两种方法：
+你可以很容易的在这个网站的代码中增加属于你自己的描述，从而快速构建一个属于你的个人主页，一般来说你需要修改如下部分：
+
+- **主页面**，直接修改 [README.md](./docs/README.md) 文件。
+- **你的照片**，替换 [logo.png](./docs/.vuepress/public/logo.png) 即可，**注意比例尺为正方形**。
+- **标签页的图标**，替换 [favicon.ico](./docs/.vuepress/public/favicon.ico) 文件，**否则在你的标签页上将一直保留 demo 中的 logo**。
+- **你的简介/姓名/网页标题/社交软件链接**，在 [config.ts](./docs/.vuepress/config.ts) 和 [theme.ts](./docs/.vuepress/theme.ts) 中修改即可。
+- **导航栏内容**，在 [navbar/en.ts](./docs/.vuepress/navbar/en.ts) 中增加或者删除英文页面下的导航栏内容，[navbar/zh.ts](./docs/.vuepress/navbar/zh.ts) 下同理修改中文页面。
+- **修改网址**，在 [config.ts](./docs/.vuepress/config.ts) 和 [theme.ts](./docs/.vuepress/theme.ts) 中修改 `hostname` 字段即可。
+
+对于上述修改，有两种方式可以完成：
 
 ### 暴力搜索修改法
 
@@ -67,7 +95,7 @@ sh build.sh
 
 ### 认真求学修改法
 
-个人主页模板是基于 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/) 搭建的，并且对框架做出了一些修改。因此，**如果想要更好的修改网站并且做出自己的设计，强烈建议参考 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/) 的文档，几乎你的每一个问题都可以得到解答，本仓库并没有对原本的主题做结构上的大修改。**
+个人主页模板是基于 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/) 搭建的，并且对框架做出了一些修改。因此，**如果想要更好地修改网站并且做出自己的设计，强烈建议参考 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/v2/) 的文档，几乎你的每一个问题都可以得到解答，本仓库并没有对原本的主题做结构上的大修改。**
 
 实际上，如果你觉得仓库中给出的设计和你的想法大相径庭，还是非常建议直接在 vuepress-theme-hope 的主题上进行修改，可塑性会更高。
 
